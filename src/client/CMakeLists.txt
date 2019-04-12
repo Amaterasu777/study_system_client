@@ -11,8 +11,17 @@ set(
 )
 
 set(
-        CLIENT_SRC
-        ${CLIENT_SRC_DIR}/main.cpp
+        CLIENT_H
+
+        ${CLIENT_SRC_DIR}/application/application.h
 )
 
-ADD_EXECUTABLE(client ${CLIENT_SRC})
+set(
+        CLIENT_SRC
+
+        ${CLIENT_SRC_DIR}/main.cpp
+        ${CLIENT_SRC_DIR}/application/application.cpp
+)
+
+add_executable(client ${CLIENT_SRC})
+target_link_libraries(client ${QT_LIBS})
