@@ -27,6 +27,9 @@ set(
 
 include_directories(
         ${CLIENT_SRC_DIR}
+
+        ${GLOBAL_SRC_DIR}
+        ${GLOBAL_SRC_DIR}/libResources/src
 )
 
 add_executable(client ${CLIENT_SRC})

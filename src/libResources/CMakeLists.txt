@@ -31,7 +31,11 @@ set(
         ${RESOURCES_SRC_DIR}/styles/styles.cpp
 )
 
-include_directories( ${RESOURCES_SRC_DIR} )
+include_directories(
+        ${RESOURCES_SRC_DIR}
+        ${GLOBAL_SRC_DIR}
+)
+
 add_library( Resources ${RESOURCES_H} ${RESOURCES_SRC} )
 target_link_libraries( Resources ${QT_LIBS} )
 
