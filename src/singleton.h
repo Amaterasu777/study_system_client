@@ -1,8 +1,6 @@
 #ifndef GLOBAL_SINGLETON_H
 #define GLOBAL_SINGLETON_H
 
-#include <memory>
-
 /**
  * Класс-прототип синглтона
  * @tparam T
@@ -15,8 +13,8 @@ public:
      * @return Прототип класса
      */
     static T& instance() {
-        static const std::unique_ptr<T> instance{new T{singleton{}}};
-        return *instance;
+        static T t {singleton {}};
+        return t;
     }
 
     Singleton(Singleton const&) = delete;
