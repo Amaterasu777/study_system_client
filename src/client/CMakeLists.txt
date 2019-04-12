@@ -30,4 +30,4 @@ include_directories(
 )
 
 add_executable(client ${CLIENT_SRC})
-target_link_libraries(client ${QT_LIBS})
+target_link_libraries(client ${QT_LIBS} Resources)
