@@ -14,6 +14,7 @@ set(
         CLIENT_H
 
         ${CLIENT_SRC_DIR}/application/application.h
+        ${CLIENT_SRC_DIR}/windows/main_window/main_window.h
 )
 
 set(
@@ -21,6 +22,11 @@ set(
 
         ${CLIENT_SRC_DIR}/main.cpp
         ${CLIENT_SRC_DIR}/application/application.cpp
+        ${CLIENT_SRC_DIR}/windows/main_window/main_window.cpp
+)
+
+include_directories(
+        ${CLIENT_SRC_DIR}
 )
 
 add_executable(client ${CLIENT_SRC})

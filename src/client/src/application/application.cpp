@@ -6,5 +6,5 @@
  * @param argv - аргументы запуска
  */
 Application::Application(int argc, char** argv) : _qApp(argc, argv) {
-
+    _mainWindow.show();
 }
