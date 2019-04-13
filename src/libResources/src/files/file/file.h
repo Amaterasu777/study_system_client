@@ -21,6 +21,17 @@ namespace libResources {
             File() = default;
             ~File() = default;
 
+            /**
+             * Проверка, является ли файл бинарным
+             * @return const bool
+             */
+            const bool isBin() const  { return _isBin;  }
+            /**
+             * Проверка, является ли файл текстовым
+             * @return const bool
+             */
+            const bool isText() const { return !_isBin; }
+
         private:
             /**
              * Манипулятор доступа к файлам
@@ -30,6 +41,10 @@ namespace libResources {
              * Содержимое файла в виде контейнера строк
              */
             QStringList _lines;
+            /**
+             * Флаг бинарного файла
+             */
+            bool _isBin;
 
             /**
              * Метод инициализирующий текстовый файл

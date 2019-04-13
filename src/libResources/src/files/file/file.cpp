@@ -1,5 +1,6 @@
 #include "file.h"
 
+#include <QtCore/QTextStream>
 #include <exceptions/file_access/file_access.h>
 
 using namespace libResources::files;
@@ -9,17 +10,23 @@ using namespace libResources::files;
  * @param path
  * @param isBin
  */
-File::File(const QString &path, bool isBin) : _file(path) {
+File::File(const QString &path, bool isBin) : _file(path), _isBin(isBin) {
     //  Если это бинарный файл - то нужна отдельная инициализация
-    (isBin) ? initBinFile() : initTextFile();
+    (_isBin) ? initBinFile() : initTextFile();
 }
 
 /**
  * Метод, инициализирующий текстовый файл
  */
 void File::initTextFile() {
-    if(!_file.isOpen())
+    if(!_file.open(QIODevice::ReadOnly))
         throw exceptions::FileAccessException(_file.fileName());
+
+    QTextStream stream(&_file);
+    while(!stream.atEnd())
+        _lines.push_back(stream.readLine());
+
+    _file.close();
 }
 
 /**
