@@ -39,4 +39,4 @@
 #  endif
 #endif
 
-#endif
+#endif /* EXPORT_LIB_RES_H */

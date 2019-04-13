@@ -11,4 +11,5 @@ Application::Application(int argc, char** argv) : _qApp(argc, argv) {
     _mainWindow.show();
 
     auto& zz = libResources::Fonts::instance();
+    zz.init();
 }

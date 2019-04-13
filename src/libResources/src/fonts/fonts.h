@@ -11,6 +11,11 @@ namespace libResources {
     class EXPORT_LIB_RES Fonts : public Singleton<Fonts> {
     public:
         explicit Fonts(singleton) {};
+
+        /**
+         * Метод, инициализирующий шрифты
+         */
+        void init();
     private:
     };
 }
