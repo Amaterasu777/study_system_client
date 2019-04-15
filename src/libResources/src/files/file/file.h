@@ -22,6 +22,19 @@ namespace libResources {
             ~File() = default;
 
             /**
+             * Оператор доступа к строке файла
+             * @param index
+             * @return QString
+             */
+            QString operator[](int index) { return _lines[index]; }
+
+            /**
+             * Кол-во строк в файле
+             * @return int
+             */
+            const int& count() { return _linesCount; }
+
+            /**
              * Проверка, является ли файл бинарным
              * @return const bool
              */
@@ -41,6 +54,10 @@ namespace libResources {
              * Содержимое файла в виде контейнера строк
              */
             QStringList _lines;
+            /**
+             * Кол-во строк в файле
+             */
+            int _linesCount;
             /**
              * Флаг бинарного файла
              */

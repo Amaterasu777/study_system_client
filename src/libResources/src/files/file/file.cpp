@@ -10,7 +10,7 @@ using namespace libResources::files;
  * @param path
  * @param isBin
  */
-File::File(const QString &path, bool isBin) : _file(path), _isBin(isBin) {
+File::File(const QString &path, bool isBin) : _file(path), _isBin(isBin), _linesCount(0) {
     //  Если это бинарный файл - то нужна отдельная инициализация
     (_isBin) ? initBinFile() : initTextFile();
 }
@@ -26,6 +26,7 @@ void File::initTextFile() {
     while(!stream.atEnd())
         _lines.push_back(stream.readLine());
 
+    _linesCount = _lines.count();
     _file.close();
 }
 

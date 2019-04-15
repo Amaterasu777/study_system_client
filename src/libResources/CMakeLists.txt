@@ -25,6 +25,7 @@ set(
         ${RESOURCES_SRC_DIR}/exceptions/file_access/file_access.h
 
         ${RESOURCES_SRC_DIR}/files/file/file.h
+        ${RESOURCES_SRC_DIR}/files/localization_file/localization_file.h
 )
 
 set(
@@ -38,6 +39,7 @@ set(
         ${RESOURCES_SRC_DIR}/exceptions/file_access/file_access.cpp
 
         ${RESOURCES_SRC_DIR}/files/file/file.cpp
+        ${RESOURCES_SRC_DIR}/files/localization_file/localization_file.cpp
 )
 
 include_directories(
