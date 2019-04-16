@@ -10,7 +10,16 @@ namespace libResources {
      */
     class EXPORT_LIB_RES Localizations : public Singleton<Localizations> {
     public:
+        /**
+         * Синглтон
+         */
         explicit Localizations(singleton) {}
+
+        /**
+         * Метод инициализации
+         */
+        void init();
+    private:
     };
 }
 

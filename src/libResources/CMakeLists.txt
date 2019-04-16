@@ -24,8 +24,11 @@ set(
         ${RESOURCES_SRC_DIR}/exceptions/exception.h
         ${RESOURCES_SRC_DIR}/exceptions/file_access/file_access.h
 
+        ${RESOURCES_SRC_DIR}/files/directory/directory.h
         ${RESOURCES_SRC_DIR}/files/file/file.h
         ${RESOURCES_SRC_DIR}/files/localization_file/localization_file.h
+
+        ${RESOURCES_SRC_DIR}/localizations/locale/locale.h
 )
 
 set(
@@ -38,8 +41,11 @@ set(
 
         ${RESOURCES_SRC_DIR}/exceptions/file_access/file_access.cpp
 
+        ${RESOURCES_SRC_DIR}/files/directory/directory.cpp
         ${RESOURCES_SRC_DIR}/files/file/file.cpp
         ${RESOURCES_SRC_DIR}/files/localization_file/localization_file.cpp
+
+        ${RESOURCES_SRC_DIR}/localizations/locale/locale.cpp
 )
 
 include_directories(

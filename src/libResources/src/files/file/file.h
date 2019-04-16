@@ -17,9 +17,14 @@ namespace libResources {
              * @param isBin - если истина - то это бинарный файл
              */
             explicit File(const QString& path, bool isBin = false);
+            /**
+             * Конструктор копирования
+             * @param copy
+             */
+            File(const File& copy);
 
             File() = default;
-            ~File() = default;
+            virtual ~File() = default;
 
             /**
              * Оператор доступа к строке файла

@@ -4,6 +4,14 @@
 #include <QtCore/QException>
 #include <QtCore/QString>
 
+#ifdef QT_DEBUG
+    #include <QtCore/QDebug>
+    #define logException(msg) qDebug() << msg;
+#else
+    //ToDo: добавить вывод обработки экцепшенов
+    #define logException(msg)
+#endif
+
 namespace libResources {
     /**
      * Прототип классов исключений

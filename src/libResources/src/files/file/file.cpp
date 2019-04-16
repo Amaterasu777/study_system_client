@@ -16,6 +16,16 @@ File::File(const QString &path, bool isBin) : _file(path), _isBin(isBin), _lines
 }
 
 /**
+ * Конструктор копирования
+ * @param copy
+ */
+File::File(const libResources::files::File& copy) : _lines(copy._lines),
+                                                    _linesCount(copy._linesCount),
+                                                    _isBin(copy._isBin),
+                                                    _file(copy._file.fileName())
+{}
+
+/**
  * Метод, инициализирующий текстовый файл
  */
 void File::initTextFile() {

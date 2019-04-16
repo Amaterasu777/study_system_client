@@ -16,6 +16,9 @@ namespace libResources {
              * @param path
              */
             explicit LocalizationFile(const QString& path);
+            LocalizationFile(const LocalizationFile& copy) : _hashTable(copy._hashTable) {}
+
+            LocalizationFile() = default;
             ~LocalizationFile() = default;
 
             /**
